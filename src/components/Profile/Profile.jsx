@@ -5,11 +5,13 @@ const Profile = () => {
     const { user } = useSelector((state) => state.auth);
 
   return (
+    <>
     <div>
         <p>{user.name}</p>
         <p>{user.email}</p>
-    
     </div>
+        {console.log(user)}
+    </>
   )
 }
 
