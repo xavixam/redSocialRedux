@@ -1,8 +1,18 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
 
 const Header = () => {
+  const { user } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
+
+  const onLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <>
       <div className="header">
@@ -14,16 +24,21 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              {/* {token ? (
+              {user ? (
                 <>
-                  <li className="nav-item" onClick={logoutUser}>
-                    <Link to="/logout" className="nav-link">
+                <li className="nav-item">
+                    <Link to="/profile" className="nav-link">
+                      Profile
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link" onClick={onLogout}>
                       Logout
                     </Link>
                   </li>
                 </>
               ) : (
-                <> */}
+                <>
                   <li className="nav-item">
                     <Link to="/register" className="nav-link">
                       Register
@@ -34,8 +49,8 @@ const Header = () => {
                       Login
                     </Link>
                   </li>
-                {/* </>
-              )} */}
+                </>
+              )}
             </ul>
           </header>
         </div>
