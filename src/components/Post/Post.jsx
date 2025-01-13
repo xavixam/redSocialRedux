@@ -29,7 +29,7 @@ const Post = () => {
     return (
       <>
         <input onKeyUp={handleChange} placeholder="search post" name="text" />
-        <button><SearchOutlined /></button>
+        <button onClick={()=>navigate("/search/"+text)}><SearchOutlined /></button>
         <div>{post}</div>
       </>
     )
