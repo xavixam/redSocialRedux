@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { SearchOutlined } from "@ant-design/icons"
 
 const Post = () => {
     const { posts } = useSelector((state) => state.posts);
+    const [text, setText] = useState("");
+    const navigate = useNavigate();
+    
+    const handleChange = (e) => {
+      setText(e.target.value);
+      if (e.key === "Enter") {
+        navigate("/search/"+text)
+      }
+    };
+  
 
     const post = posts.map((post) => {
         return (
@@ -15,7 +26,13 @@ const Post = () => {
         );
       });
     
-    return <div>{post}</div>;
+    return (
+      <>
+        <input onKeyUp={handleChange} placeholder="search post" name="text" />
+        <button><SearchOutlined /></button>
+        <div>{post}</div>
+      </>
+    )
   };
   
   export default Post;

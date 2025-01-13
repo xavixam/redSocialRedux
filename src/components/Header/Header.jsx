@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
+import { LogoutOutlined, LoginOutlined } from "@ant-design/icons"
 
 const Header = () => {
   const { user } = useSelector((state) => state.auth);
@@ -33,7 +34,7 @@ const Header = () => {
                   </li>
                   <li className="nav-item">
                     <Link to="/login" className="nav-link" onClick={onLogout}>
-                      Logout
+                      Logout <LogoutOutlined />
                     </Link>
                   </li>
                 </>
@@ -46,7 +47,7 @@ const Header = () => {
                   </li>
                   <li className="nav-item">
                     <Link to="/login" className="nav-link">
-                      Login
+                      Login <LoginOutlined />
                     </Link>
                   </li>
                 </>
