@@ -10,6 +10,7 @@ import PostDetail from "./components/Posts/PostDetail/PostDetail";
 import Search from "./components/Search/Search";
 import AddPost from "./components/AddPost/AddPost";
 import PrivateZone from "./guards/PrivateZone";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="/post/:id" element={<PostDetail />} />
             <Route path="/search/:title" element={<Search />} />
             <Route path="/addPost" element={<AddPost/>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
       </BrowserRouter>
