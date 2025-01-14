@@ -7,6 +7,7 @@ import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Profile from "./components/Profile/Profile";
 import PostDetail from "./components/Posts/PostDetail/PostDetail"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (

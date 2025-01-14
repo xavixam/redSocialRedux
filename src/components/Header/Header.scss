@@ -1,0 +1,107 @@
+
+ /* src/components/Home/Home.scss */
+
+.home-container {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  background-color: #333; /* Fondo oscuro para resaltar el texto blanco */
+}
+
+.content {
+  text-align: center; /* Centra el texto dentro del contenedor */
+}
+
+.centered-image {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centra la imagen */
+}
+
+.elegant-text {
+  font-family: 'Georgia', serif; /* Fuente elegante */
+  font-size: 4rem; /* Tamaño grande del texto */
+  color: white; /* Color blanco */
+  font-weight: bold;
+  margin-top: 20px; /* Espacio entre la imagen y el texto */
+}
+
+ 
+ .header {
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  .nav {
+    .nav-link {
+      color:#ffffff;  
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color:#6c9bcf;  
+        transform: scale(1.1);
+      }
+
+      &.active {
+        background-color: #6c9bcf; 
+      }
+    }
+  }
+
+      form {
+        display: flex;
+        align-items: center;
+    
+        input {
+          padding: 8px 20px;
+          border-radius: 30px;
+          border: 1px solid #ffffff;  
+          background-color: transparent;
+          color: #6c9bcf; 
+          outline: none;
+          transition: all 0.3s ease;
+          width: 200px;
+    
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+          }
+    
+          &:focus {
+            border-color: #6c9bcf; 
+          }
+        }
+    
+        button {
+          width: 45px;
+          height: 45px;
+          margin-left: 10px;
+          border: 2px solid #ffffff; 
+          background-color: transparent;
+          color: #ffffff; 
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-weight: bold;
+    
+          &:hover {
+            background-color: #6c9bcf;  
+            transform: scale(1.2);
+          }
+    
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+    }

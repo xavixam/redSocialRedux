@@ -1,0 +1,72 @@
+body {
+   
+    background-image: url('../../assets/941564-Grand-Tour22-Gatos-del-Pirineo-Les-3-Vallees-I.jpg');
+    
+  }
+  
+.profile-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    margin: 0;
+
+  }
+  
+  .profile-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+    transform: translateY(-10px);
+  }
+  
+  .profile-header {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #00c4cc; 
+    margin-bottom: 20px;
+  }
+  
+  .profile-info {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #e0e0e0;
+  }
+  
+  .profile-info strong {
+    color: #fff;
+  }
+  
+  .profile-info p {
+    margin: 5px 0;
+  }
+  
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2); 
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(6px);
+  }
+  
+  
+  .profile-card p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #fff; 
+  }
+  
+  
+  .profile-card p span {
+    font-weight: 600;
+    color: #00c4cc; 
+  }
+ 
+  .profile-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
+  }
+  
