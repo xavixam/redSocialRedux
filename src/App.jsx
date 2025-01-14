@@ -9,6 +9,7 @@ import Profile from "./components/Profile/Profile";
 import PostDetail from "./components/Posts/PostDetail/PostDetail";
 import Search from "./components/Search/Search";
 import AddPost from "./components/AddPost/AddPost";
+import PrivateZone from "./guards/PrivateZone";
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/profile/:id" element={
+              <PrivateZone>
+              <Profile />
+            </PrivateZone>
+            }/>
             <Route path="/post/:id" element={<PostDetail />} />
             <Route path="/search/:title" element={<Search />} />
             <Route path="/addPost" element={<AddPost/>} />

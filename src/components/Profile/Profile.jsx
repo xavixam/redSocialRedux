@@ -21,16 +21,15 @@ const Profile = () => {
       </div>
       <div>
         <h2>User's posts</h2>
-        {userPost.map((posts)=>{
-          return(
-          <>
-          <Link to={"/post/" + posts._id}>
-            <p>{posts.title}</p>
-          </Link>
-          </>)
-          
+        {userPost.map((posts) => {
+          return (
+            <>
+              <Link to={"/post/" + posts._id}>
+                <p>{posts.title}</p>
+              </Link>
+            </>
+          );
         })}
-
       </div>
     </>
   );
