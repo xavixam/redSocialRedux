@@ -28,7 +28,7 @@ const Header = () => {
               {user ? (
                 <>
                 <li className="nav-item">
-                    <Link to="/profile" className="nav-link">
+                    <Link to={"/profile/" + user._id} className="nav-link">
                       Profile
                     </Link>
                   </li>

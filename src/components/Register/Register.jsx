@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { register } from "../../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { notification } from "antd";

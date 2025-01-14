@@ -1,18 +1,39 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
+import { getUserPosts } from "../../features/posts/postsSlice";
 
 const Profile = () => {
-    const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
+  const { userPost } = useSelector((state) => state.posts);
+  const { id } = useParams();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getUserPosts(id));
+  }, []);
 
   return (
     <>
-    <div>
+      <div>
         <p>{user.name}</p>
         <p>{user.email}</p>
-    </div>
-        {console.log(user)}
-    </>
-  )
-}
+      </div>
+      <div>
+        <h2>User's posts</h2>
+        {userPost.map((posts)=>{
+          return(
+          <>
+          <Link to={"/post/" + posts._id}>
+            <p>{posts.title}</p>
+          </Link>
+          </>)
+          
+        })}
 
-export default Profile
+      </div>
+    </>
+  );
+};
+
+export default Profile;
