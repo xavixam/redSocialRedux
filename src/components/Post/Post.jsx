@@ -32,13 +32,14 @@ const Post = () => {
       </div>
       );
     });
+
   
   return (
     <>
       <input onKeyUp={handleChange} placeholder="search post" name="text" />
       <button onClick={()=>navigate("/search/"+text)}><SearchOutlined /></button>
       <button onClick={()=>navigate("/addPost")}>New Post <PlusCircleOutlined /></button>
-      <div>{post}</div>
+      <div className='posts-container'>{post}</div>
     </>
   )
 };

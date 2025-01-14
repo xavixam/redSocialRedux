@@ -1,0 +1,56 @@
+.register-container {
+    background: transparent;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px); 
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #b3d4fc; 
+    border-radius: 5px;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: #1e90ff; 
+      box-shadow: 0 0 8px rgba(30, 144, 255, 0.4); 
+    }
+  }
+  
+  button {
+    padding: 12px;
+    background: #6c9bcf;  
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+    &:hover {
+      background: #4682b4; /* Azul más oscuro al hacer hover */
+    }
+  }
+  
+  /* Estilo de los mensajes de error */
+  .ant-notification-notice-message {
+    color: #f8d7da; /* Rojo suave para los errores */
+  }
+  
+  

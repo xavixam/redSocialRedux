@@ -28,7 +28,7 @@ const Header = () => {
     <>
       <div className="header">
         <div className="container">
-          <header className="d-flex justify-content-center py-3">
+        <header className="d-flex justify-content-between align-items-center py-3">
             <ul className="nav nav-pills">
               <li className="nav-item">
                 <Link to="/" className="nav-link active">
@@ -67,55 +67,7 @@ const Header = () => {
         </div>
       </div>
     </>
-  )
-}
-
-  return (
-    <div className="header">
-      <div className="container">
-        <header className="d-flex justify-content-between align-items-center py-3">
-          {/* Menú de navegación */}
-          <ul className="nav nav-pills">
-            <li className="nav-item">
-              <Link to="/" className="nav-link active">Home</Link>
-            </li>
-            {user ? (
-              <>
-                <li className="nav-item">
-                  <Link to="/profile" className="nav-link">Profile</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/login" className="nav-link" onClick={onLogout}>Logout</Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="nav-item">
-                  <Link to="/register" className="nav-link">Register</Link>
-                </li>
-                <li className="nav-item">
-                  <Link to="/login" className="nav-link">Login</Link>
-                </li>
-              </>
-            )}
-          </ul>
-
-          {/* Barra de búsqueda */}
-          <form className="d-flex" onSubmit={handleSearch}>
-            <input
-              type="text"
-              className="form-control me-2"
-              placeholder="search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <button type="submit">
-              <i className="bi bi-search"></i>
-            </button>
-          </form>
-        </header>
-      </div>
-    </div>
   );
+  };
 
-export default Header;
+export default Header

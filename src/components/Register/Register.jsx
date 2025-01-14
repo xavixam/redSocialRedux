@@ -3,6 +3,7 @@ import { register } from "../../features/auth/authSlice";
 import { useDispatch } from "react-redux";
 import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
+import './Register.scss';  // Asegúrate de importar el archivo SCSS
 
 const Register = () => {
 
@@ -41,37 +42,39 @@ const Register = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={onChange}
-        placeholder="Name"
-      />
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={onChange}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={onChange}
-        placeholder="Password"
-      />
-      <input
-        type="password"
-        name="password2"
-        value={password2}
-        onChange={onChange}
-        placeholder="Password 2"
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div className="register-container">
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={onChange}
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={onChange}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={onChange}
+          placeholder="Password"
+        />
+        <input
+          type="password"
+          name="password2"
+          value={password2}
+          onChange={onChange}
+          placeholder="Password 2"
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 };
 
