@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { login } from "../../features/auth/authSlice";
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { login } from "../../features/auth/authSlice"
 import './login.scss'
 
 const Login = () => {
@@ -39,4 +39,4 @@ const Login = () => {
     </form>
   );
 };
-export default Login;
+export default Login

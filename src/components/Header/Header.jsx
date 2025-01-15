@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../features/auth/authSlice";
+import React, { useState } from 'react'
+import "bootstrap/dist/css/bootstrap.min.css"
+import { Link, useNavigate } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { logout } from "../../features/auth/authSlice"
 import './Header.scss';
 import { LogoutOutlined, LoginOutlined } from "@ant-design/icons"
 

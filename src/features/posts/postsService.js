@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from "axios"
 
-const API_URL = "http://localhost:8080/posts";
+const API_URL = "http://localhost:8080/posts"
 
 const getAll = async () => {
   const res = await axios.get(API_URL + "/");
@@ -40,4 +40,4 @@ const postsService = {
   getUserPosts
 };
 
-export default postsService;
+export default postsService

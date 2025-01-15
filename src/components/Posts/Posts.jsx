@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import Post from '../Post/Post'
-import { useDispatch, useSelector } from "react-redux";
-import { getAll } from "../../features/posts/postsSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { getAll } from "../../features/posts/postsSlice"
 
 const Posts = () => {
-    const { isLoading } = useSelector((state) => state.posts);
+    const { isLoading } = useSelector((state) => state.posts)
     const dispatch = useDispatch();
   
     useEffect(() => {
@@ -12,7 +12,7 @@ const Posts = () => {
     }, []);
   
     if (isLoading) {
-      return <h1>Cargando posts...</h1>;
+      return <h1>Cargando posts...</h1>
     }
 
   return (

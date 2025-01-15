@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { register } from "../../features/auth/authSlice";
-import { useDispatch } from "react-redux";
-import { notification } from "antd";
-import { useNavigate } from "react-router-dom";
-import './Register.scss';  // Asegúrate de importar el archivo SCSS
+import React, { useState } from "react"
+import { register } from "../../features/auth/authSlice"
+import { useDispatch } from "react-redux"
+import { notification } from "antd"
+import { useNavigate } from "react-router-dom"
+import './Register.scss'
 
 const Register = () => {
 
@@ -36,8 +36,8 @@ const Register = () => {
       });
     } else {
       dispatch(register(formData));
-      setFormData(initialValue); //limpiamos el formulario
-      return navigate("/"); // redireccionamos a home
+      setFormData(initialValue); 
+      return navigate("/"); 
     }
   };
 
@@ -78,4 +78,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Register

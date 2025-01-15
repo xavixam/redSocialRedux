@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { getById } from "../../../features/posts/postsSlice";
+import React, { useEffect } from "react"
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { useParams } from "react-router-dom"
+import { getById } from "../../../features/posts/postsSlice"
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -22,5 +22,5 @@ const PostDetail = () => {
   );
 };
 
-export default PostDetail;
+export default PostDetail
  

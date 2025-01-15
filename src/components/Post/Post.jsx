@@ -1,9 +1,9 @@
-import './Post.scss'; 
-import img from '../../assets/img.png';
 import React, { useState } from 'react'
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
 import { SearchOutlined, PlusCircleOutlined } from "@ant-design/icons"
+import './Post.scss';
+import img from '../../assets/img.png'
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
@@ -44,5 +44,5 @@ const Post = () => {
   )
 };
   
-export default Post;
+export default Post
   
