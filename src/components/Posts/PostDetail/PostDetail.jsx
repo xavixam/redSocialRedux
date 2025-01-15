@@ -8,7 +8,8 @@ const PostDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { post } = useSelector((state) => state.posts);
-  
+  const { commentIds } = useSelector((state) => state.posts.post);
+
   useEffect(() => {
     dispatch(getById(id));
   }, []);
@@ -18,9 +19,16 @@ const PostDetail = () => {
       <h1>PostDetail</h1>
       <p>{post.title}</p>
       <p>{post.body}</p>
+      <h3>Comments</h3>
+      {commentIds.map((comment) => {
+        return (
+          <>
+            <p>{comment.body}</p>
+          </>
+        );
+      })}
     </div>
   );
 };
 
 export default PostDetail;
- 
