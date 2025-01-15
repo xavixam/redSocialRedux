@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createPost } from "../../features/posts/postsSlice";
 import { useDispatch } from "react-redux";
-import { notification } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
@@ -27,7 +26,6 @@ const AddPost = () => {
         e.preventDefault();
         if (title === "" || body === "") {
           alert("Rellena los campos")
-          
         } else {
           dispatch(createPost(formData));
           return navigate("/"); // redireccionamos a home

@@ -32,12 +32,23 @@ const getUserPosts = async (id) => {
   return res.data;
 };
 
+const createComment = async (comment) => {
+  const token = localStorage.getItem("token") || "";
+
+  const res = await axios.post("http://localhost:8080/comments/create/" + comment._id, comment.formData,  
+    {headers: {
+      authorization: token,
+  }});
+  return res.data; //payload
+};
+
 const postsService = {
   getAll,
   getById,
   getPostByName,
   createPost,
-  getUserPosts
+  getUserPosts,
+  createComment
 };
 
 export default postsService;
