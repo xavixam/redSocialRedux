@@ -83,5 +83,14 @@ export const postsSlice = createSlice({
   },
 });
 
+
+export const createComment = createAsyncThunk("posts/createComment", async (comment) => {
+  try {
+    return await postsService.createComment(comment);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 export const { reset } = postsSlice.actions
 export default postsSlice.reducer

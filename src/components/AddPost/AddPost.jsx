@@ -28,7 +28,6 @@ const AddPost = () => {
         e.preventDefault();
         if (title === "" || body === "") {
           alert("Rellena los campos")
-          
         } else {
           dispatch(createPost(formData));
           return navigate("/");
