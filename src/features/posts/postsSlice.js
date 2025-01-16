@@ -136,10 +136,17 @@ export const postsSlice = createSlice({
   }
 })
 
-
 export const createComment = createAsyncThunk("posts/createComment", async (comment) => {
   try {
     return await postsService.createComment(comment);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
+export const deletePost = createAsyncThunk("posts/deletePost", async (id) => {
+  try {
+    return await postsService.deletePost(id);
   } catch (error) {
     console.error(error);
   }

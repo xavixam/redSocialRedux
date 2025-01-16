@@ -8,6 +8,7 @@ import img from '../../assets/img.png';
 
 const Post = () => {
   const { posts, isLoading } = useSelector((state) => state.posts);
+  const { user } = useSelector((state) => state.auth);
   const [text, setText] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -67,6 +68,7 @@ const Post = () => {
       </button>
       
       <div className="posts-container">{postList}</div>
+      
     </>
     );
   };
