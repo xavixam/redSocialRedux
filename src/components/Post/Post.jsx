@@ -5,6 +5,7 @@ import { SearchOutlined, PlusCircleOutlined } from "@ant-design/icons"
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
+  const { user } = useSelector((state) => state.auth);
   const [text, setText] = useState("");
   const navigate = useNavigate();
   
@@ -30,7 +31,7 @@ const Post = () => {
     <>
       <input onKeyUp={handleChange} placeholder="search post" name="text" />
       <button onClick={()=>navigate("/search/"+text)}><SearchOutlined /></button>
-      <button onClick={()=>navigate("/addPost")}>New Post <PlusCircleOutlined /></button>
+      {user ? <button onClick={()=>navigate("/addPost")}>New Post <PlusCircleOutlined /></button> : false}
       <div>{post}</div>
     </>
   )
