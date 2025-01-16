@@ -17,7 +17,7 @@ const Profile = () => {
   return (
     <>
       <div className="profile-container">
-      <div className="profile-header">Profile</div>
+      <div className="profile-header"></div>
       <div className="profile-card">
         <div className="profile-info">
           <p><strong>Name:</strong> {user.name}</p>
@@ -26,7 +26,6 @@ const Profile = () => {
       </div>
     </div>
       <div>
-        <h2>User's posts</h2>
         {userPost.map((posts) => {
           return (
             <>

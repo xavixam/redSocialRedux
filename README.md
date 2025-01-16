@@ -45,5 +45,5 @@ Este proyecto reúne todos los conocimientos adquiridos hasta ahora para desarro
 - Git y GitHub
 
 # ✨ Autor
-- Xavi 🚀
+- Xavi Antunez.🚀
 - Karen Salazar.

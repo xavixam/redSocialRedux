@@ -15,27 +15,32 @@ const PostDetail = () => {
 
   useEffect(() => {
     dispatch(getById(id));
-  }, []);
+  }, [dispatch, id]);
 
   return (
-    <div>
-      <h1>PostDetail</h1>
-      <p>{post.title}</p>
-      <p>{post.body}</p>
-      <div>
-        <button onClick={() => setShow(true)}>
-          New Comment <CommentOutlined />
-        </button>
+    <div className="post-detail-container">
+      <div className="post-detail">
+        <h1 className="post-title">{post.title}</h1>
+        <p className="post-body">{post.body}</p>
+        <div className="comment-section">
+          <button
+            className="show-comment-btn"
+            onClick={() => setShow(true)}
+          >
+            New Comment <CommentOutlined />
+          </button>
+          {show && <AddComment />}
+        </div>
+        <h3 className="comments-heading">Comments</h3>
+
+        <div className="comments-container">
+          {commentIds?.map((comment) => (
+            <div key={comment.id} className="comment-card">
+              <p className="comment-body">{comment.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <h3>Comments</h3>
-      {show ? <AddComment /> : null}
-      {commentIds?.map((comment) => {
-        return (
-          <>
-            <p>{comment.body}</p>
-          </>
-        );
-      })}
     </div>
   );
 };

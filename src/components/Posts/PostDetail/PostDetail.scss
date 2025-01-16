@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    color: #333;
+  }
+  
+  .post-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .post-detail {
+    max-width: 800px;
+    width: 100%;  
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    transition: transform 0.3s ease;
+  }
+  
+  .post-detail:hover {
+    transform: scale(1.02);
+  }
+  
+  .post-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .post-body {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .comment-section {
+    margin-bottom: 30px;
+  }
+  
+  .show-comment-btn {
+    padding: 10px 25px;
+    background-color: #6c9bcf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 20px;
+  }
+  
+  .show-comment-btn:hover {
+    background-color: #5595b8;
+    transform: scale(1.05);
+  }
+  
+  .comments-heading {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .comments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .comment-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #444;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .comment-card:hover {
+    transform: translateY(-5px);  
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-body {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
