@@ -11,6 +11,9 @@
   position: relative;
 }
 
+h1, h2, h3 {
+  text-align: center;
+}
 .home::before {
   content: "";
   position: absolute;

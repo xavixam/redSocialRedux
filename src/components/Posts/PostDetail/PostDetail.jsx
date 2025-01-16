@@ -36,23 +36,49 @@ const PostDetail = () => {
 
   useEffect(() => {
     dispatch(getById(id));
-  }, []);
+  }, [dispatch, id]);
 
   return (
     <div>
-      <h1>PostDetail</h1>
-      {user && post && isAuthor(user._id, post.userId?._id) ? (
-        <Button danger onClick={() => delPost()}>
-          Delete Post
-          <DeleteOutlined />
-        </Button>
-      ) : null}
-      <p>{post.title}</p>
-      <p>{post.body}</p>
-      <div>
-        <button onClick={() => setShow(true)}>
-          New Comment <CommentOutlined />
-        </button>
+      <div className="post-detail-container">
+        <div className="post-detail">
+          {user && post && isAuthor(user._id, post.userId?._id) ? (
+            <Button danger onClick={() => delPost()}>
+              Delete Post
+              <DeleteOutlined />
+            </Button>
+          ) : null}
+          <h1 className="post-title">{post.title}</h1>
+          <p className="post-body">{post.body}</p>
+          <div className="comment-section">
+            <button
+              className="show-comment-btn"
+              onClick={() => setShow(true)}
+            >
+              New Comment <CommentOutlined />
+            </button>
+          </div>
+          <h3 className="comments-heading">Comments</h3>
+          {show ? <AddComment /> : null}
+          <div className="comments-container">
+
+          </div>
+          {commentIds?.map((comment) => {
+            return (
+              <>
+                <div key={comment.id} className="comment-card">
+                  <p className="comment-body">{comment.body}</p>
+                  {user && comment && isAuthor(user._id, comment.userId) ? (
+                    <Button danger onClick={() => delPost(comment._id)}>
+                      Delete Comment
+                      <DeleteOutlined />
+                    </Button>
+                  ) : null}
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
       <h3>Comments</h3>
       {show ? <AddComment /> : null}

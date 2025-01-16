@@ -49,6 +49,27 @@ export const createPost = createAsyncThunk("posts/createPost", async (post) => {
   }
 });
 
+export const likePost = createAsyncThunk(
+  "posts/likePost",
+  async (postId, thunkAPI) => {
+    try {
+      return await postsService.likePost(postId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+export const unlikePost = createAsyncThunk(
+  "posts/unlikePost",
+  async (postId, thunkAPI) => {
+    try {
+      return await postsService.unlikePost(postId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+);
+
 export const postsSlice = createSlice({
   name: "posts",
   initialState,
@@ -79,9 +100,41 @@ export const postsSlice = createSlice({
     builder.addCase(getUserPosts.fulfilled, (state, action) => {
       state.isError = false;
       state.userPost = action.payload.posts;
-    });
-  },
-});
+    })
+      .addCase(likePost.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(likePost.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const updatedPost = action.payload;
+        const index = state.posts.findIndex((post) => post.id === updatedPost.id);
+        if (index !== -1) {
+          state.posts[index] = updatedPost;
+        }
+      })
+      .addCase(likePost.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(unlikePost.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(unlikePost.fulfilled, (state, action) => {
+        state.isLoading = false;
+        const updatedPost = action.payload;
+        const index = state.posts.findIndex((post) => post.id === updatedPost.id);
+        if (index !== -1) {
+          state.posts[index] = updatedPost;
+        }
+      })
+      .addCase(unlikePost.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+  }
+})
 
 export const createComment = createAsyncThunk("posts/createComment", async (comment) => {
   try {

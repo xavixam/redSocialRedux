@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createComment, getById } from "../../features/posts/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import './AddComment.scss';
 
 const AddComment = () => {
   const initialValue = {
@@ -29,23 +30,29 @@ const AddComment = () => {
       await dispatch(createComment({ formData, _id: post._id }));
       setFormData(initialValue);
       console.log("creado2");
-      return dispatch(getById(post._id)); // redireccionamos a home
+      return dispatch(getById(post._id)); 
     }
   };
 
   return (
-    <form>
-      <input
-        type="text"
-        name="body"
-        value={body}
-        onChange={onChange}
-        placeholder="New Comment..."
-      />
-      <button type="submit" onClick={onSubmit}>
-        Register
-      </button>
-    </form>
+    <div className="add-comment-container">
+      <div className="add-comment-card">
+        <h2 className="comment-form-title">Add a Comment</h2>
+        <form onSubmit={onSubmit} className="comment-form">
+          <input
+            type="text"
+            name="body"
+            value={body}
+            onChange={onChange}
+            placeholder="New Comment..."
+            className="comment-input"
+          />
+          <button type="submit" className="comment-submit-button">
+            Register
+          </button>
+        </form>
+      </div>
+    </div>
   );
 };
 
