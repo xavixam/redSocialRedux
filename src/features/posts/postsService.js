@@ -28,6 +28,17 @@ const createPost = async (post) => {
   return res.data; //payload
 };
 
+const deletePost = async (id) => {
+  const token = localStorage.getItem("token") || "";
+
+  const res = await axios.delete(API_URL + "/id/" + id, {
+    headers: {
+      authorization: token,
+    },
+  });
+  return res.data; //payload
+};
+
 const getUserPosts = async (id) => {
   const res = await axios.get(API_URL + "/getUserPosts/" + id);
   return res.data;
@@ -62,6 +73,7 @@ const unlikePost = async (postId) => {
   );
   return res.data;
 }
+
 const createComment = async (comment) => {
   const token = localStorage.getItem("token") || "";
 
@@ -77,6 +89,7 @@ const postsService = {
   getById,
   getPostByName,
   createPost,
+  deletePost,
   getUserPosts,
   likePost,
   unlikePost, 

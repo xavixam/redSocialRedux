@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { createComment, getById } from "../../features/posts/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 const AddComment = () => {
   const initialValue = {
@@ -11,7 +10,6 @@ const AddComment = () => {
   const [formData, setFormData] = useState(initialValue);
   const { post } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const { body } = formData;
 
