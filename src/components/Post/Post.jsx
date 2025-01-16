@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux"
+import { Link, useNavigate } from "react-router-dom"
 import { SearchOutlined, PlusCircleOutlined } from "@ant-design/icons"
+import './Post.scss';
+import img from '../../assets/img.png'
 
 const Post = () => {
   const { posts } = useSelector((state) => state.posts);
@@ -19,23 +21,29 @@ const Post = () => {
 
   const post = posts.map((post) => {
       return (
-        <div className="post" key={post._id}>
-          <Link to={"/post/" + post._id}>
-            <p>{post.title}</p>
-          </Link>
-        </div>
+        <div className="post-card" key={post._id}>
+        <Link to={"/post/" + post._id} className="post-link">
+         <img
+                src={img}
+                alt="img"
+                style={{ width: '100%', height: 'auto' }}
+              />
+          <div className="post-title">{post.title}</div>
+        </Link>
+      </div>
       );
     });
+
   
   return (
     <>
       <input onKeyUp={handleChange} placeholder="search post" name="text" />
       <button onClick={()=>navigate("/search/"+text)}><SearchOutlined /></button>
       {user ? <button onClick={()=>navigate("/addPost")}>New Post <PlusCircleOutlined /></button> : false}
-      <div>{post}</div>
+      <div className='posts-container'>{post}</div>
     </>
   )
 };
   
-export default Post;
+export default Post
   

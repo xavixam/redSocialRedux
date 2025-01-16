@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import authService from "./authService";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import authService from "./authService"
 
 const token = localStorage.getItem("token") || "";
 const user = JSON.parse(localStorage.getItem("user")) || null;
@@ -57,4 +57,4 @@ export const logout = createAsyncThunk("auth/logout", async () => {
   }
 });
 
-export default authSlice.reducer;
+export default authSlice.reducer

@@ -25,12 +25,12 @@ export const getById = createAsyncThunk("posts/getById", async (id) => {
 });
 
 export const getPostByName = createAsyncThunk("posts/getByName", async (title) => {
-    try {
-      return await postsService.getPostByName(title);
-    } catch (error) {
-      console.error(error);
-    }
+  try {
+    return await postsService.getPostByName(title);
+  } catch (error) {
+    console.error(error);
   }
+}
 );
 
 export const getUserPosts = createAsyncThunk("posts/getUserPosts", async (id) => {
@@ -70,7 +70,7 @@ export const postsSlice = createSlice({
     builder.addCase(createPost.fulfilled, (state, action) => {
       state.isSuccess = true;
       state.message = action.payload.message;
-      state.posts = [...state.posts,action.payload.post]
+      state.posts = [...state.posts, action.payload.post]
     });
     builder.addCase(createPost.rejected, (state, action) => {
       state.isError = true;
@@ -83,6 +83,7 @@ export const postsSlice = createSlice({
   },
 });
 
+
 export const createComment = createAsyncThunk("posts/createComment", async (comment) => {
   try {
     return await postsService.createComment(comment);
@@ -91,5 +92,5 @@ export const createComment = createAsyncThunk("posts/createComment", async (comm
   }
 });
 
-export const { reset } = postsSlice.actions;
-export default postsSlice.reducer;
+export const { reset } = postsSlice.actions
+export default postsSlice.reducer

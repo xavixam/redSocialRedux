@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { register } from "../../features/auth/authSlice";
-import { useDispatch } from "react-redux";
-import { notification } from "antd";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { register } from "../../features/auth/authSlice"
+import { useDispatch } from "react-redux"
+import { notification } from "antd"
+import { useNavigate } from "react-router-dom"
+import './Register.scss'
 
 const Register = () => {
 
@@ -35,44 +36,46 @@ const Register = () => {
       });
     } else {
       dispatch(register(formData));
-      setFormData(initialValue); //limpiamos el formulario
-      return navigate("/"); // redireccionamos a home
+      setFormData(initialValue); 
+      return navigate("/"); 
     }
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        type="text"
-        name="name"
-        value={name}
-        onChange={onChange}
-        placeholder="Name"
-      />
-      <input
-        type="email"
-        name="email"
-        value={email}
-        onChange={onChange}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={onChange}
-        placeholder="Password"
-      />
-      <input
-        type="password"
-        name="password2"
-        value={password2}
-        onChange={onChange}
-        placeholder="Password 2"
-      />
-      <button type="submit">Register</button>
-    </form>
+    <div className="register-container">
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={onChange}
+          placeholder="Name"
+        />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={onChange}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={onChange}
+          placeholder="Password"
+        />
+        <input
+          type="password"
+          name="password2"
+          value={password2}
+          onChange={onChange}
+          placeholder="Password 2"
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
   );
 };
 
-export default Register;
+export default Register

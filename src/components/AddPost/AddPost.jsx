@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { createPost } from "../../features/posts/postsSlice";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { createPost } from "../../features/posts/postsSlice"
+import { useDispatch } from "react-redux"
+import { notification } from "antd"
+import { useNavigate } from "react-router-dom"
+import './AddPost.scss'
 
 const AddPost = () => {
     const initialValue = {
@@ -28,27 +30,35 @@ const AddPost = () => {
           alert("Rellena los campos")
         } else {
           dispatch(createPost(formData));
-          return navigate("/"); // redireccionamos a home
+          return navigate("/");
         }
       };
     
       return (
-        <form>
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={onChange}
-            placeholder="Title"
-          />
-          <textarea
-            name="body"
-            value={body}
-            onChange={onChange}
-            placeholder="Body"
-          />
-          <button type="submit" onClick={onSubmit}>Register</button>
-        </form>
-)}
-
-export default AddPost
+        <div className="addpost-container">
+          <h2 className="addpost-title">Crear Nueva Publicación</h2>
+          <form className="addpost-form" onSubmit={onSubmit}>
+            <input
+              type="text"
+              name="title"
+              value={title}
+              onChange={onChange}
+              placeholder="Título"
+              className="addpost-input"
+            />
+            <textarea
+              name="body"
+              value={body}
+              onChange={onChange}
+              placeholder="Contenido"
+              className="addpost-textarea"
+            />
+            <button type="submit" className="addpost-button">
+              Publicar
+            </button>
+          </form>
+        </div>
+      );
+    };
+    
+    export default AddPost
