@@ -84,6 +84,17 @@ const createComment = async (comment) => {
   return res.data; //payload
 };
 
+const deleteComment = async (id) => {
+  const token = localStorage.getItem("token") || "";
+
+  const res = await axios.delete("http://localhost:8080/comments/id/" + id, {
+    headers: {
+      authorization: token,
+    },
+  });
+  return res.data; //payload
+};
+
 const postsService = {
   getAll,
   getById,
@@ -93,7 +104,8 @@ const postsService = {
   getUserPosts,
   likePost,
   unlikePost, 
-  createComment
+  createComment,
+  deleteComment
 };
 
 export default postsService
