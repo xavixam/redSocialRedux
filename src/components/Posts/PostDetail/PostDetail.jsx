@@ -29,9 +29,9 @@ const PostDetail = () => {
     navigate("/");
   };
 
-  const delComment = (id) => {
-    dispatch(deleteComment(id));
-    navigate("/");
+  const delComment = async (id) => {
+    await dispatch(deleteComment(id));
+    dispatch(getById(id));
   };
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const PostDetail = () => {
             <p>
               {comment.body}
               {user && comment && isAuthor(user._id, comment.userId) ? (
-                <Button danger onClick={() => delPost(comment._id)}>
+                <Button danger onClick={() => delComment(comment._id)}>
                   Delete Comment
                   <DeleteOutlined />
                 </Button>
