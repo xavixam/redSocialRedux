@@ -99,5 +99,13 @@ export const deletePost = createAsyncThunk("posts/deletePost", async (id) => {
   }
 });
 
+export const deleteComment = createAsyncThunk("posts/deleteComment", async (id) => {
+  try {
+    return await postsService.deleteComment(id);
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 export const { reset } = postsSlice.actions
 export default postsSlice.reducer
