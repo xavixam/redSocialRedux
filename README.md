@@ -30,6 +30,7 @@ La aplicación está compuesta por los siguientes componentes principales:
 # Instalación:
 
 - Clona el repositorio:
+- https://github.com/xavixam/redSocialRedux
 
 ## 🔧 Tecnologías Utilizadas
 
