@@ -1,0 +1,41 @@
+
+footer {
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    text-align: center;
+      bottom: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px;
+      text-align: center;
+    
+  }
+  
+ 
+  footer a {
+    color: #5e5e5e; 
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #3dafe4; 
+  }
+  
+  footer i {
+    font-size: 1.8rem;
+    margin: 0 10px;
+  }
+  
+  footer .nav,
+  footer .col-md-4 {
+    justify-content: center;
+  }
+  
+  footer span {
+    color: #ffffff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
