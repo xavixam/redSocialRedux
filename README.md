@@ -3,9 +3,7 @@
 ## Introducción
 
 El proyecto **"Natural Wonder of the World"** es una red social donde los usuarios pueden registrarse, iniciar sesión, ver publicaciones, crear nuevas publicaciones, interactuar con las publicaciones mediante "likes" y comentarios, y realizar búsquedas de otros usuarios o publicaciones. Esta aplicación ha sido desarrollada utilizando React para el frontend y una API personalizada creada en el 2º Proyecto de Backend.
-
-![Vistaprevia-redsocial](./assets/redsocial.png)
-
+![image](https://github.com/user-attachments/assets/f1a7d2d7-7f4b-443d-a28b-4c83fe9af226)
 
 Este proyecto tiene como objetivo unificar todos los conocimientos adquiridos en el desarrollo de aplicaciones web, incluyendo el uso de **React**, **Redux**, **React Router**, **SASS**, y la integración con una API RESTful para manejar las interacciones de los usuarios y sus publicaciones.
 
