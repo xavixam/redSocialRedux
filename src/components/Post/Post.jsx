@@ -63,9 +63,12 @@ const Post = () => {
         </button>
       </div>
   
-      <button onClick={() => navigate("/addPost")}>
-        New Post <PlusCircleOutlined />
-      </button>
+      <div className="new-post-container">
+  <button onClick={() => navigate("/addPost")} className="new-post-btn">
+    New Post <PlusCircleOutlined />
+  </button>
+</div>
+
       
       <div className="posts-container">{postList}</div>
       

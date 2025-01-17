@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
 import { getUserPosts } from "../../features/posts/postsSlice"
+import profileImage from "../../assets/perfil.avif";
 
 const Profile = () => {
   const { user } = useSelector((state) => state.auth)
@@ -20,6 +21,12 @@ const Profile = () => {
       <div className="profile-header"></div>
       <div className="profile-card">
         <div className="profile-info">
+        <img
+        src={profileImage} 
+        alt="Profile"
+        className="profile-image"
+        />
+
           <p><strong>Name:</strong> {user.name}</p>
           <p><strong>Email:</strong> {user.email}</p>
         </div>

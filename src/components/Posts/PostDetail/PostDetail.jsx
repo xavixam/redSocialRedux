@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import {
-  getById,
-  deletePost,
-  deleteComment,
-} from "../../../features/posts/postsSlice";
+import { getById, deletePost, deleteComment } from "../../../features/posts/postsSlice";
 import { CommentOutlined, DeleteOutlined } from "@ant-design/icons";
 import AddComment from "../../AddComment/AddComment";
 import { Button } from "antd";
+import "./PostDetail.scss"; //
 
 const PostDetail = () => {
   const { id } = useParams();
@@ -36,67 +32,45 @@ const PostDetail = () => {
 
   useEffect(() => {
     dispatch(getById(id));
-  }, [dispatch, id]);
+  }, [id, dispatch]);
 
   return (
-    <div>
-      <div className="post-detail-container">
-        <div className="post-detail">
-          {user && post && isAuthor(user._id, post.userId?._id) ? (
-            <Button danger onClick={() => delPost()}>
-              Delete Post
-              <DeleteOutlined />
-            </Button>
-          ) : null}
-          <h1 className="post-title">{post.title}</h1>
-          <p className="post-body">{post.body}</p>
-          <div className="comment-section">
-            <button
-              className="show-comment-btn"
-              onClick={() => setShow(true)}
-            >
-              New Comment <CommentOutlined />
-            </button>
-          </div>
-          <h3 className="comments-heading">Comments</h3>
-          {show ? <AddComment /> : null}
-          <div className="comments-container">
+    <div className="post-detail-container">
+      <div className="post-detail">
+        {user && post && isAuthor(user._id, post.userId?._id) ? (
+          <Button danger className="delete-post-btn" onClick={delPost}>
+            Delete Post <DeleteOutlined />
+          </Button>
+        ) : null}
 
-          </div>
-          {commentIds?.map((comment) => {
-            return (
-              <>
-                <div key={comment.id} className="comment-card">
-                  <p className="comment-body">{comment.body}</p>
-                  {user && comment && isAuthor(user._id, comment.userId) ? (
-                    <Button danger onClick={() => delPost(comment._id)}>
-                      Delete Comment
-                      <DeleteOutlined />
-                    </Button>
-                  ) : null}
-                </div>
-              </>
-            );
-          })}
+        <h1 className="post-title">{post?.title}</h1>
+        <p className="post-body">{post?.body}</p>
+
+        <div className="comment-section">
+          <button className="show-comment-btn" onClick={() => setShow(true)}>
+            New Comment <CommentOutlined />
+          </button>
+        </div>
+
+        {show && <AddComment postId={post._id} />}
+
+        <h3 className="comments-heading">Comments</h3>
+        <div className="comments-container">
+          {commentIds?.map((comment) => (
+            <div key={comment._id} className="comment-card">
+              <p className="comment-body">{comment.body}</p>
+              {user && comment && isAuthor(user._id, comment.userId) ? (
+                <button
+                  className="delete-comment-btn"
+                  onClick={() => delComment(comment._id)}
+                >
+                  <DeleteOutlined /> Delete
+                </button>
+              ) : null}
+            </div>
+          ))}
         </div>
       </div>
-      <h3>Comments</h3>
-      {show ? <AddComment /> : null}
-      {commentIds?.map((comment) => {
-        return (
-          <>
-            <p>
-              {comment.body}
-              {user && comment && isAuthor(user._id, comment.userId) ? (
-                <Button danger onClick={() => delComment(comment._id)}>
-                  Delete Comment
-                  <DeleteOutlined />
-                </Button>
-              ) : null}
-            </p>
-          </>
-        );
-      })}
     </div>
   );
 };

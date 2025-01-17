@@ -6,7 +6,11 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+  .new-post-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+}
   
   .post-card {
     width: 300px;

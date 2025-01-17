@@ -37,7 +37,7 @@ const AddComment = () => {
   return (
     <div className="add-comment-container">
       <div className="add-comment-card">
-        <h2 className="comment-form-title">Add a Comment</h2>
+        <h2 className="comment-form-title"></h2>
         <form onSubmit={onSubmit} className="comment-form">
           <input
             type="text"

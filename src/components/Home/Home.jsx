@@ -15,7 +15,7 @@ const Home = () => {
           alt="Logo de la Red Social"
           className="logo"
         /><p>
-        "Natural Wonder of the World" is an extraordinary guide that showcases Earth's most breathtaking natural treasures. Combining landscape photography, 3D terrain models, and explanatory artworks, the book reveals the formation of geological features and the life within these environments. It highlights the plants and animals inhabiting these areas, offering a visual celebration of the planet's natural beauty. The book covers various continents like Asia, Europe, North America, and Africa, providing facts, statistics, maps, and explanations about Earth’s ecosystems. It also explores extreme weather conditions such as cyclones, thunderstorms, and tornadoes, offering a comprehensive view of our planet’s diverse features.
+        "Natural Wonder of the World" is an extraordinary guide that showcases Earth's most breathtaking natural treasures. Combining landscape photography, 3D terrain models, and explanatory artworks, the book reveals the formation of geological features and the life within these environments. It highlights the plants and animals inhabiting these areas, offering a visual celebration of the planet's natural beauty. 
       </p>
       </div>
       <Posts />
